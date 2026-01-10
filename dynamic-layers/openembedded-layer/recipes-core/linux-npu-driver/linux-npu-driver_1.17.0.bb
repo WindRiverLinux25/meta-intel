@@ -34,6 +34,10 @@ EXTRA_OECMAKE += " -DCMAKE_INSTALL_FIRMWARE_DIR=${nonarch_base_libdir}"
 
 DEPENDS = "level-zero dpkg-native pkgconfig-native"
 
+COMPATIBLE_MACHINE = 'null'
+COMPATIBLE_HOST:x86-x32 = 'null'
+COMPATIBLE_HOST:libc-musl:class-target = 'null'
+
 PACKAGES =+ "${PN}-firmware ${PN}-tests"
 
 FILES:${PN}-firmware = "${nonarch_base_libdir}/firmware/updates/intel/vpu/*"
